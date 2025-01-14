@@ -12,7 +12,7 @@ def income_tax(inc):
 try:
     annual_income = float(input("Enter your annual income in Rupees: "))
     if annual_income < 0:
-        print("Income cannot be negative.")
+        print("Income cannot be negative. ")
     else:
         tax_due = income_tax(annual_income)
         print("Your calculated tax is: Rs",tax_due)
