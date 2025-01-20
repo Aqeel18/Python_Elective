@@ -1,20 +1,14 @@
-def income_tax(inc):
-    if inc <= 10000:
-        tax = 0
-    elif inc <= 30000:
-        tax = (inc - 10000) * 0.10
-    elif inc <= 60000:
-        tax = (20000 * 0.10) + (inc - 30000) * 0.20
+annual_income = float(input("Enter your annual income in Rupees: "))
+if annual_income < 0:
+    print("Income cannot be negative.")
+else:
+    if annual_income <= 250000:
+        tax_due = 0
+    elif annual_income <= 500000:
+        tax_due = (annual_income - 250000) * 0.05
+    elif annual_income <= 1000000:
+        tax_due = (250000 * 0.05) + (annual_income - 500000) * 0.20
     else:
-        tax = (20000 * 0.10) + (30000 * 0.20) + (inc - 60000) * 0.30
-    return tax 
-
-try:
-    annual_income = float(input("Enter your annual income in Rupees: "))
-    if annual_income < 0:
-        print("Income cannot be negative. ")
-    else:
-        tax_due = income_tax(annual_income)
-        print("Your calculated tax is: Rs",tax_due)
-except ValueError:
-    print("Invalid input. Please enter a numeric value.")
+        tax_due = (250000 * 0.05) + (500000 * 0.20) + (annual_income - 1000000) * 0.30
+    
+    print("Your calculated tax is: Rs", tax_due)
